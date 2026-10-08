@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#123c35">
+  <meta name="description" content="Itinerario del viaje a Nueva Zelanda e Islas Cook 2027.">
+  <title>Viaje a Nueva Zelanda 2027 🇳🇿</title>
+
+  <style>
+    :root {
+      --verde-nz: #123c35;
+      --verde-helecho: #2f6b57;
+      --verde-suave: #e9f1ed;
+      --azul-glaciar: #5fa9b8;
+      --azul-profundo: #16495a;
+      --arena: #e8dcc8;
+      --tierra: #9a6845;
+      --gris-fondo: #f3f6f4;
+      --gris-texto: #34413d;
+      --blanco: #ffffff;
+      --amarillo: #f0c75e;
+      --rojo: #b8544d;
+      --sombra: 0 4px 18px rgba(18, 60, 53, 0.09);
+      --radio: 16px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: var(--gris-fondo);
+      color: var(--gris-texto);
+      line-height: 1.58;
+    }
+
+    a {
+      color: var(--azul-profundo);
+      font-weight: 600;
+    }
+
+    .hero {
+      background:
+        linear-gradient(145deg, rgba(18,60,53,.98), rgba(22,73,90,.96));
+      color: white;
+      padding: 34px 18px 28px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "⛰️  🌿  🥝  🌊";
+      display: block;
+      font-size: 1.55rem;
+      letter-spacing: .35rem;
+      margin-top: 15px;
+      opacity: .9;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(2rem, 8vw, 3rem);
+      letter-spacing: -.03em;
+    }
+
+    .hero .subtitle {
+      margin: 8px 0 0;
+      opacity: .9;
+      font-size: 1rem;
+    }
+
+    #countdown {
+      margin: 18px auto 0;
+      display: inline-block;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 999px;
+      padding: 8px 15px;
+      font-size: .92rem;
+      font-weight: 700;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: var(--verde-nz);
+      box-shadow: 0 2px 12px rgba(0,0,0,.14);
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .nav-inner {
+      display: flex;
+      min-width: max-content;
+      margin: 0 auto;
+    }
+
+    .nav a {
+      color: white;
+      text-decoration: none;
+      padding: 13px 14px;
+      font-size: .88rem;
+      font-weight: 700;
+      opacity: .95;
+    }
+
+    .nav a:hover { background: rgba(255,255,255,.1); }
+
+    .container {
+      width: min(100% - 24px, 700px);
+      margin: 22px auto 50px;
+    }
+
+    .intro {
+      background: var(--blanco);
+      border-left: 5px solid var(--azul-glaciar);
+      border-radius: var(--radio);
+      padding: 17px 18px;
+      box-shadow: var(--sombra);
+      margin-bottom: 18px;
+    }
+
+    .section {
+      margin-top: 28px;
+      scroll-margin-top: 62px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--verde-nz);
+      margin: 0 0 13px;
+      font-size: 1.55rem;
+    }
+
+    .section-title .icon { font-size: 1.5rem; }
+
+    .card {
+      background: var(--blanco);
+      border-radius: var(--radio);
+      box-shadow: var(--sombra);
+      padding: 18px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      color: var(--verde-nz);
+      margin: 0 0 8px;
+      font-size: 1.12rem;
+    }
+
+    .card h4 {
+      margin: 17px 0 6px;
+      color: var(--azul-profundo);
+      font-size: 1rem;
+    }
+
+    .day-block {
+      border-top: 1px solid #e5ebe8;
+      padding-top: 15px;
+      margin-top: 15px;
+    }
+
+    .day-block:first-child {
+      border-top: 0;
+      padding-top: 0;
+      margin-top: 0;
+    }
+
+    .day-title {
+      font-weight: 800;
+      color: var(--verde-nz);
+      font-size: 1.04rem;
+      margin-bottom: 8px;
+    }
+
+    ul { padding-left: 21px; }
+    li { margin: 7px 0; }
+
+    .ruta {
+      background: var(--verde-suave);
+      border-radius: 12px;
+      padding: 11px 13px;
+      margin: 10px 0;
+      font-weight: 700;
+      color: var(--verde-nz);
+    }
+
+    .vuelo-info {
+      background: #edf5f7;
+      border-left: 4px solid var(--azul-glaciar);
+      border-radius: 10px;
+      padding: 12px 13px;
+      margin: 10px 0;
+    }
+
+    .nota {
+      background: #fff8df;
+      border-left: 4px solid var(--amarillo);
+      border-radius: 10px;
+      padding: 12px 13px;
+      margin: 12px 0;
+    }
+
+    .alerta {
+      background: #fff0ee;
+      border-left: 4px solid var(--rojo);
+      border-radius: 10px;
+      padding: 12px 13px;
+      margin: 12px 0;
+    }
+
+    .importante {
+      background: #f4eee8;
+      border-left: 4px solid var(--tierra);
+      border-radius: 10px;
+      padding: 12px 13px;
+      margin: 12px 0;
+    }
+
+    .tag {
+      display: inline-block;
+      background: var(--verde-suave);
+      color: var(--verde-nz);
+      border-radius: 999px;
+      padding: 4px 9px;
+      font-size: .78rem;
+      font-weight: 800;
+      margin: 2px 4px 2px 0;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 11px;
+    }
+
+    .button {
+      display: inline-block;
+      text-decoration: none;
+      background: var(--verde-nz);
+      color: white;
+      border-radius: 9px;
+      padding: 8px 11px;
+      font-size: .86rem;
+    }
+
+    .button.secondary { background: var(--azul-profundo); }
+
+    .checklist label {
+      display: block;
+      padding: 9px 0;
+      border-bottom: 1px solid #e7ece9;
+    }
+
+    .checklist input {
+      margin-right: 9px;
+      transform: scale(1.15);
+    }
+
+    .table-wrap { overflow-x: auto; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .9rem;
+      min-width: 540px;
+    }
+
+    th, td {
+      padding: 9px 8px;
+      text-align: left;
+      border-bottom: 1px solid #e4eae7;
+      vertical-align: top;
+    }
+
+    th {
+      background: var(--verde-suave);
+      color: var(--verde-nz);
+    }
+
+    .footer {
+      text-align: center;
+      color: #687670;
+      font-size: .82rem;
+      padding: 25px 10px 10px;
+    }
+
+    @media (min-width: 720px) {
+      .container { margin-top: 30px; }
+      .card { padding: 21px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="hero">
+    <h1>Viaje a Nueva Zelanda 2027 🇳🇿</h1>
+    <div class="subtitle">Nueva Zelanda · Islas Cook · 13 de marzo – 1 de abril de 2027</div>
+    <div id="countdown">Calculando cuenta atrás…</div>
+  </header>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#isla-sur">🏔️ Isla Sur</a>
+      <a href="#isla-norte">🌋 Isla Norte</a>
+      <a href="#cook">🏝️ Islas Cook</a>
+      <a href="#auckland">🌆 Auckland</a>
+      <a href="#pendientes">📌 Pendientes</a>
+      <a href="#info">ℹ️ Info</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <div class="intro">
+      <strong>🌿 Viaje en construcción</strong><br>
+      Itinerario de 20 días contando vuelos internacionales, con Nueva Zelanda como eje principal y una escapada a las Islas Cook. Esta primera versión recoge únicamente lo que ya tenemos decidido o reservado; lo pendiente queda señalado para ir completándolo.
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- ISLA SUR                                                   -->
+    <!-- ========================================================= -->
+    <section id="isla-sur" class="section">
+      <h2 class="section-title"><span class="icon">🏔️</span> Isla Sur</h2>
+
+      <div class="card">
+        <div class="day-block">
+          <div class="day-title">Día 1 · Lunes 15/03 — Llegada a Christchurch</div>
+          <ul>
+            <li><strong>12:50:</strong> llegada a Christchurch (CHC).</li>
+            <li>Recogida del coche de alquiler.</li>
+            <li>Resto del día para aclimatarnos, hacer compras básicas y descansar.</li>
+            <li><strong>Noche:</strong> Christchurch.</li>
+          </ul>
+          <div class="tag">Llegada internacional</div>
+          <div class="tag">Coche de alquiler</div>
+        </div>
+
+        <div class="day-block">
+          <div class="day-title">Día 2 · Martes 16/03 — Christchurch → Edoras → Lago Tekapo</div>
+          <div class="ruta">Christchurch → Mount Sunday / Edoras → Lake Tekapo</div>
+          <ul>
+            <li><strong>Mañana:</strong> salida de Christchurch por la ruta interior de Canterbury Plains hacia Mount Sunday, aproximadamente 2 h 15 min.</li>
+            <li><strong>Mediodía:</strong> caminata por libre hasta el alto de Edoras, cruzando las pasarelas de madera y disfrutando de las vistas de la cuenca del Rangitata.</li>
+            <li><strong>Comida:</strong> picnic en la zona.</li>
+            <li><strong>Tarde:</strong> conducción hasta el Lago Tekapo, aproximadamente 1 h 45 min.</li>
+            <li>Parada en la Iglesia del Buen Pastor.</li>
+            <li><strong>Noche:</strong> Lago Tekapo o Twizel.</li>
+          </ul>
+          <div class="nota"><strong>🎬 ESDLA:</strong> Mount Sunday / Edoras es una de las paradas cinematográficas destacadas del viaje.</div>
+          <div class="buttons">
+            <a class="button" href="https://www.google.com/maps/search/?api=1&query=Mount+Sunday+New+Zealand" target="_blank" rel="noopener">📍 Mount Sunday</a>
+            <a class="button secondary" href="https://www.google.com/maps/search/?api=1&query=Church+of+the+Good+Shepherd+Lake+Tekapo" target="_blank" rel="noopener">📍 Iglesia del Buen Pastor</a>
+          </div>
+        </div>
+
+        <div class="day-block">
+          <div class="day-title">Día 3 · Miércoles 17/03 — Tekapo → Pukaki → Aoraki/Mount Cook → Wanaka</div>
+          <div class="ruta">Lake Tekapo → Lake Pukaki → Aoraki/Mount Cook → Lindis Pass → Wanaka</div>
+          <ul>
+            <li><strong>Mañana:</strong> bordeo del Lago Pukaki y parada en un mirador.</li>
+            <li><strong>Mediodía:</strong> llegada al Parque Nacional Aoraki/Mount Cook.</li>
+            <li><strong>Hooker Valley Track:</strong> caminata por libre, aproximadamente 3 h ida y vuelta, con 3 grandes puentes colgantes y llegada al lago glaciar.</li>
+            <li><strong>Tarde:</strong> trayecto hacia Wanaka cruzando Lindis Pass, aproximadamente 2 h 15 min desde la zona de Mount Cook.</li>
+            <li><strong>Atardecer:</strong> fotografía en <em>#ThatWanakaTree</em>.</li>
+            <li><strong>Noche:</strong> Wanaka o Queenstown, pendiente decidir según la logística del día siguiente.</li>
+          </ul>
+          <div class="alerta"><strong>⚠️ A revisar:</strong> el día es ambicioso si se mantiene completa la Hooker Valley Track. Conviene comprobar horarios de luz, estado del sendero y alojamiento antes de cerrarlo definitivamente.</div>
+        </div>
+
+        <div class="day-block">
+          <div class="day-title">Día 4 · Jueves 18/03 — Glenorchy, Paradise & adrenalina</div>
+          <div class="ruta">Queenstown → Glenorchy → Paradise → Queenstown</div>
+          <ul>
+            <li><strong>Opción de mañana:</strong> tour guiado de ESDLA a Glenorchy & Paradise con salida alrededor de las 08:00.</li>
+            <li><strong>Opción de tarde:</strong> salida alrededor de las 13:30 y duración aproximada de 4,5 h.</li>
+            <li><strong>Alternativa:</strong> experiencia <em>Dart River Wilderness Jet</em>, con navegación y recorrido por los valles de Isengard y los bosques de Lothlórien.</li>
+            <li>Si se elige <strong>Shotover Jet</strong> en lugar del Dart River, estudiar salida de las 12:30 o de las 17:30 al regreso de Glenorchy.</li>
+            <li><strong>Noche:</strong> Queenstown.</li>
+          </ul>
+          <div class="importante"><strong>🎬 Día ESDLA:</strong> aquí interesa reservar tiempo suficiente para disfrutar Glenorchy y Paradise sin convertir el día en una carrera entre actividades.</div>
+          <div class="buttons">
+            <a class="button" href="https://www.getyourguide.com/es-es/queenstown-l498/desde-queenstown-excursion-de-el-senor-de-los-anillos-a-glenorchy-t266152/" target="_blank" rel="noopener">🎬 Tour ESDLA</a>
+          </div>
+        </div>
+
+        <div class="day-block">
+          <div class="day-title">Día 5 · Viernes 19/03 — Queenstown → Te Anau</div>
+          <div class="ruta">Queenstown → Lake Wakatipu → Te Anau</div>
+          <ul>
+            <li><strong>Mañana:</strong> salida tranquila bordeando el Lago Wakatipu hacia Te Anau, aproximadamente 2 h de coche.</li>
+            <li><strong>Tarde:</strong> tiempo libre junto al lago.</li>
+            <li><strong>Opcional:</strong> excursión a las Te Anau Glowworm Caves con RealNZ, con reserva previa.</li>
+            <li><strong>Noche:</strong> Te Anau.</li>
+          </ul>
+        </div>
+
+        <div class="day-block">
+          <div class="day-title">Día 6 · Sábado 20/03 — Milford Road → Milford Sound → Queenstown</div>
+          <div class="ruta">Te Anau → Milford Sound → Queenstown</div>
+          <ul>
+            <li><strong>Mañana:</strong> recorrido por Milford Road por libre.</li>
+            <li>Paradas previstas: <strong>Mirror Lakes</strong>, <strong>Eglinton Valley</strong> y <strong>Homer Tunnel</strong>.</li>
+            <li><strong>Mediodía:</strong> crucero por Milford Sound, aproximadamente 1 h 45 min – 2 h.</li>
+            <li>Opciones iniciales: <strong>RealNZ</strong> o <strong>Southern Discoveries</strong>.</li>
+            <li><strong>Tarde:</strong> regreso por carretera directamente a Queenstown, aproximadamente 3 h 30 min.</li>
+            <li><strong>Noche:</strong> Queenstown.</li>
+          </ul>
+          <div class="alerta"><strong>⚠️ Día largo:</strong> conviene dejar margen amplio para las paradas de Milford Road y para posibles retrasos meteorológicos o de carretera.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- ISLA NORTE                                                -->
+    <!-- ========================================================= -->
+    <section id="isla-norte" class="section">
+      <h2 class="section-title"><span class="icon">🌋</span> Isla Norte</h2>
+
+      <div class="card">
+        <div class="day-block">
+          <div class="day-title">Día 7 · Domingo 21/03 — Queenstown → Auckland → Taupō</div>
+          <div class="ruta">Queenstown ✈ Auckland → Taupō</div>
+          <ul>
+            <li>Devolución del coche de alquiler de la Isla Sur.</li>
+            <li>Vuelo temprano/mediodía Queenstown → Auckland, pendiente de reserva.</li>
+            <li>Recogida del coche de alquiler de la Isla Norte en Auckland.</li>
+            <li><strong>Tarde:</strong> conducción directa a Taupō, aproximadamente 3 h 30 min.</li>
+            <li><strong>Noche:</strong> Taupō o National Park / Whakapapa, pendiente elegir.</li>
+          </ul>
+          <div class="nota"><strong>💡 Estrategia:</strong> aprovechar este día para hacer el tramo largo de carretera y llegar ya a la zona de Tongariro.</div>
+        </div>
+
+        <div class="day-block">
+          <div class="day-title">Día 8 · Lunes 22/03 — Tongariro: Mordor</div>
+          <div class="ruta">Taupō → Tongariro National Park → Rotorua</div>
+          <ul>
+            <li><strong>Mañana:</strong> opción <em>Alpine Crossing Light</em> hasta Soda Springs o caminata alternativa según condiciones.</li>
+            <li><strong>Almuerzo:</strong> Whakapapa Village.</li>
+            <li><strong>Tarde:</strong> Taranaki Falls, Tawhai Falls (<em>Gollum's Pool</em>) y panorámica desde Meads Wall (<em>Emyn Muil</em>).</li>
+            <li><strong>Atardecer:</strong> parada rápida en Huka Falls durante el trayecto.</li>
+            <li><strong>Noche:</strong> Rotorua.</li>
+            <li><strong>Opcional nocturno:</strong> Redwoods Treewalk iluminado.</li>
+          </ul>
+          <div class="alerta"><strong>⚠️ Pendiente:</strong> concretar la caminata de Tongariro según meteorología, condiciones del parque y nivel de esfuerzo que queramos ese día.</div>
+        </div>
+
+        <div class="day-block">
+          <div class="day-title">Día 9 · Martes 23/03 — Geotermia & cultura maorí</div>
+          <div class="ruta">Rotorua → Wai-O-Tapu → Te Puia → Auckland</div>
+          <ul>
+            <li><strong>Mañana:</strong> Wai-O-Tapu, incluyendo <strong>Lady Knox Geyser a las 10:15</strong> y Champagne Pool.</li>
+            <li><strong>Mediodía/Tarde:</strong> Te Puia: géiser Pōhutu, centro del kiwi y experiencia/demostración maorí.</li>
+            <li><strong>Tarde:</strong> regreso hacia Auckland, aproximadamente 2 h 45 min.</li>
+            <li><strong>Noche:</strong> cerca del aeropuerto de Auckland o devolución del coche esa misma noche.</li>
+          </ul>
+          <div class="nota"><strong>🎟️ Reservas:</strong> las horas concretas de Wai-O-Tapu y Te Puia deberán encajarse para evitar una mañana demasiado ajustada.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- ISLAS COOK                                                -->
+    <!-- ========================================================= -->
+    <section id="cook" class="section">
+      <h2 class="section-title"><span class="icon">🏝️</span> Islas Cook</h2>
+
+      <div class="card">
+        <div class="day-block">
+          <div class="day-title">Día 10 · Miércoles 24/03 — Auckland → Rarotonga</div>
+          <ul>
+            <li>Devolución del coche de alquiler si no se ha hecho la noche anterior.</li>
+            <li>Vuelo Auckland → Rarotonga, pendiente de reserva.</li>
+            <li>Comprobar cuidadosamente el efecto de cambio de fecha al planificar alojamiento y actividades.</li>
+          </ul>
+        </div>
+
+        <div class="day-block">
+          <div class="day-title">Días 10–14 · 24/03 → 28/03 — Islas Cook</div>
+          <ul>
+            <li>Estancia principal en <strong>Rarotonga</strong>.</li>
+            <li>Pendiente decidir si se incorpora <strong>Aitutaki</strong> y cuántas noches.</li>
+            <li>Pendiente definir excursiones, alojamiento y vuelos internos.</li>
+          </ul>
+          <div class="alerta"><strong>⏰ Muy importante:</strong> antes de reservar alojamiento y excursiones habrá que cuadrar exactamente el cambio de día entre Nueva Zelanda y las Islas Cook y, después, el regreso.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- AUCKLAND                                                   -->
+    <!-- ========================================================= -->
+    <section id="auckland" class="section">
+      <h2 class="section-title"><span class="icon">🌆</span> Auckland</h2>
+
+      <div class="card">
+        <div class="day-block">
+          <div class="day-title">Día 15 · Lunes 29/03 — Hobbiton + Waitomo</div>
+          <ul>
+            <li><strong>Plan:</strong> excursión organizada de día completo desde Auckland.</li>
+            <li>Recogida aproximada en hotel: <strong>06:30–07:00</strong>.</li>
+            <li>Visita guiada a las <strong>Waitomo Glowworm Caves</strong>.</li>
+            <li>Almuerzo incluido, según excursión, en The Green Dragon Inn o buffet de Hobbiton.</li>
+            <li>Visita al set de rodaje de <strong>Hobbiton</strong>, incluyendo Bagshot Row.</li>
+            <li>Regreso previsto a Auckland alrededor de las <strong>19:00</strong>.</li>
+            <li><strong>Noche:</strong> Auckland.</li>
+          </ul>
+          <div class="nota"><strong>💡 Por qué funciona:</strong> después del viaje desde Cook, el autobús permite descansar y evita conducir unas 5 horas entre Auckland y la zona de Hobbiton/Waitomo.</div>
+        </div>
+
+        <div class="day-block">
+          <div class="day-title">Día 16 · Martes 30/03 — Waiheke + Sky Tower</div>
+          <ul>
+            <li><strong>Mañana:</strong> ferry Auckland → Waiheke, aproximadamente 35 min.</li>
+            <li>Paseo costero de Matiatia a Oneroa.</li>
+            <li>Almuerzo con vistas.</li>
+            <li><strong>Tarde:</strong> visita a un viñedo panorámico, por ejemplo Mudbrick o Cable Bay.</li>
+            <li>Ferry de regreso a Auckland.</li>
+            <li><strong>Atardecer:</strong> subida a la Sky Tower.</li>
+            <li><strong>Noche:</strong> cena de despedida en Viaduct Harbour.</li>
+          </ul>
+          <div class="nota"><strong>🍷 Ritmo final:</strong> día pensado como cierre relajado del viaje antes del vuelo internacional del día siguiente.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- PENDIENTES                                                  -->
+    <!-- ========================================================= -->
+    <section id="pendientes" class="section">
+      <h2 class="section-title"><span class="icon">📌</span> Pendientes</h2>
+
+      <div class="card checklist">
+        <h3>✈️ Vuelos y transportes</h3>
+        <label><input type="checkbox"> Reservar Queenstown → Auckland (21/03).</label>
+        <label><input type="checkbox"> Reservar Auckland → Rarotonga (24/03).</label>
+        <label><input type="checkbox"> Confirmar regreso Cook → Auckland y efecto del cambio de fecha.</label>
+        <label><input type="checkbox"> Si hacemos Aitutaki, reservar vuelos Rarotonga ↔ Aitutaki.</label>
+        <label><input type="checkbox"> Reservar coches de alquiler en Isla Sur e Isla Norte.</label>
+      </div>
+
+      <div class="card checklist">
+        <h3>🏨 Alojamientos</h3>
+        <label><input type="checkbox"> Christchurch — 15/03.</label>
+        <label><input type="checkbox"> Tekapo o Twizel — 16/03.</label>
+        <label><input type="checkbox"> Wanaka o Queenstown — 17/03.</label>
+        <label><input type="checkbox"> Queenstown — 18/03 y 20/03.</label>
+        <label><input type="checkbox"> Te Anau — 19/03.</label>
+        <label><input type="checkbox"> Taupō / National Park — 21/03.</label>
+        <label><input type="checkbox"> Rotorua — 22/03.</label>
+        <label><input type="checkbox"> Auckland — 23/03, 29/03 y 30/03 según logística.</label>
+        <label><input type="checkbox"> Rarotonga / Aitutaki — 24–28/03.</label>
+      </div>
+
+      <div class="card checklist">
+        <h3>🎟️ Excursiones y reservas</h3>
+        <label><input type="checkbox"> Tour ESDLA Glenorchy / Paradise.</label>
+        <label><input type="checkbox"> Decidir Dart River Wilderness Jet / Shotover Jet.</label>
+        <label><input type="checkbox"> Glowworm Caves de Te Anau.</label>
+        <label><input type="checkbox"> Crucero Milford Sound.</label>
+        <label><input type="checkbox"> Actividad de Tongariro.</label>
+        <label><input type="checkbox"> Wai-O-Tapu.</label>
+        <label><input type="checkbox"> Te Puia.</label>
+        <label><input type="checkbox"> Redwoods Treewalk.</label>
+        <label><input type="checkbox"> Tour Hobbiton + Waitomo.</label>
+        <label><input type="checkbox"> Ferry y actividades de Waiheke.</label>
+        <label><input type="checkbox"> Sky Tower.</label>
+      </div>
+
+      <div class="card checklist">
+        <h3>🗺️ Planificación</h3>
+        <label><input type="checkbox"> Revisar tiempos reales de conducción de toda la ruta.</label>
+        <label><input type="checkbox"> Revisar estado y accesibilidad de Hooker Valley Track.</label>
+        <label><input type="checkbox"> Definir la caminata de Tongariro según condiciones.</label>
+        <label><input type="checkbox"> Cuadrar completamente el cambio de fecha de Islas Cook.</label>
+        <label><input type="checkbox"> Añadir mapas y puntos de aparcamiento cuando el itinerario esté cerrado.</label>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- INFO                                                         -->
+    <!-- ========================================================= -->
+    <section id="info" class="section">
+      <h2 class="section-title"><span class="icon">ℹ️</span> Info</h2>
+
+      <div class="card">
+        <h3>✈️ Vuelos internacionales confirmados</h3>
+        <div class="vuelo-info">
+          <strong>13/03 · Madrid → Hong Kong</strong><br>
+          Cathay Pacific CX298 · 22:30 → 18:00 (+1 día)<br>
+          Duración: 12 h 30 min · Economy · 1 pieza de equipaje indicada.
+        </div>
+        <div class="vuelo-info">
+          <strong>14/03 · Hong Kong → Christchurch</strong><br>
+          Cathay Pacific CX119 · 20:40 → 12:50 (+1 día)<br>
+          Duración: 11 h 10 min · Economy · Llegada a Christchurch el 15/03.
+        </div>
+        <div class="vuelo-info">
+          <strong>31/03 · Auckland → Hong Kong</strong><br>
+          Cathay Pacific CX198 · 14:25 → 21:05<br>
+          Duración: 11 h 40 min.
+        </div>
+        <div class="vuelo-info">
+          <strong>31/03 · Hong Kong → Frankfurt</strong><br>
+          Cathay Pacific CX289 · 23:55 → 07:15 (+1 día)<br>
+          Duración: 13 h 20 min.
+        </div>
+        <div class="vuelo-info">
+          <strong>01/04 · Frankfurt → Valencia</strong><br>
+          Lufthansa LH1100 · 09:30 → 11:55<br>
+          Duración: 2 h 25 min.
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>🧭 Resumen de etapas</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Fechas</th>
+                <th>Zona</th>
+                <th>Base principal</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>15–20/03</td><td>Isla Sur</td><td>Christchurch · Tekapo · Wanaka/Queenstown · Te Anau</td><td>En planificación</td></tr>
+              <tr><td>21–23/03</td><td>Isla Norte</td><td>Taupō · Rotorua · Auckland</td><td>En planificación</td></tr>
+              <tr><td>24–28/03</td><td>Islas Cook</td><td>Rarotonga / Aitutaki</td><td>Pendiente</td></tr>
+              <tr><td>29–30/03</td><td>Auckland</td><td>Auckland</td><td>En planificación</td></tr>
+              <tr><td>31/03–01/04</td><td>Regreso</td><td>Auckland → Valencia</td><td>✈️ Reservado</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>🚨 Emergencias</h3>
+        <ul>
+          <li><strong>Emergencias en Nueva Zelanda:</strong> 111</li>
+          <li><strong>Emergencias en Islas Cook:</strong> comprobar y añadir teléfonos locales antes del viaje.</li>
+          <li><strong>Seguro de viaje:</strong> añadir número de póliza y teléfono de asistencia cuando esté contratado.</li>
+          <li><strong>Consulado / representación española:</strong> añadir datos y teléfonos actualizados antes de viajar.</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="footer">
+      🇳🇿 NewZealand2027 · Primera estructura del itinerario · Actualizar a medida que se confirmen vuelos, hoteles y excursiones.
+    </div>
+  </main>
+
+  <script>
+    // Salida internacional: 13 de marzo de 2027 a las 22:30 (hora de Madrid).
+    const travelDate = new Date("March 13, 2027 22:30:00").getTime();
+    const countdown = document.getElementById("countdown");
+
+    function updateCountdown() {
+      const now = Date.now();
+      const distance = travelDate - now;
+
+      if (distance <= 0) {
+        countdown.textContent = "✈️ ¡El viaje ha comenzado!";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((distance / (1000 * 60)) % 60);
+
+      countdown.textContent = `⏳ Faltan ${days} días · ${hours} h · ${minutes} min para salir`;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 60000);
+  </script>
+</body>
+</html>
